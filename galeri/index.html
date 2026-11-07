@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeri | Komunitas Perempuan Kelomang</title>
+  <meta name="description" content="Galeri foto kegiatan Komunitas Perempuan Kelomang di Fakfak, Papua Barat.">
+  <meta name="theme-color" content="#1f0f33">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galeri | Komunitas Perempuan Kelomang">
+  <meta property="og:description" content="Galeri foto kegiatan Komunitas Perempuan Kelomang di Fakfak, Papua Barat.">
+  <meta property="og:image" content="../assets/images/foto-14-anggota-di-kebun-bambu-besar.jpg">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo-kelomang.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="../assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white text-ink-900 antialiased">
+<a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2">Lewati ke konten</a>
+<header x-data="siteHeader" class="fixed inset-x-0 top-0 z-50 transition duration-300" :class="(scrolled || open) ? 'bg-ink-950/95 shadow-lg backdrop-blur' : 'bg-transparent'">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigasi utama">
+    <a href="../" class="flex items-center gap-3">
+      <img src="../assets/images/logo-kelomang.jpg" alt="Logo Komunitas Perempuan Kelomang" class="h-11 w-auto rounded-md bg-white p-0.5">
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-bold tracking-[0.18em] text-white">KELOMANG</span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-white/60">Komunitas Perempuan</span>
+      </span>
+    </a>
+    <ul class="hidden items-center gap-9 lg:flex"><li><a href="../" class="py-2 text-sm transition text-white/70 hover:text-white" >Beranda</a></li>
+        <li class="relative" @mouseenter="profil = true" @mouseleave="profil = false">
+          <button type="button" @click="profil = !profil" :aria-expanded="profil" class="flex items-center gap-1.5 py-2 text-sm transition text-white/70 hover:text-white">
+            Profil<i class="fa-solid fa-chevron-down text-[10px] transition" :class="profil && 'rotate-180'"></i>
+          </button>
+          <div x-cloak x-show="profil" x-transition.origin.top @click.outside="profil = false" class="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3">
+            <ul class="bg-white p-2 shadow-soft">
+              <li><a href="../tentang/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-circle-info w-4 text-brand-500"></i>Tentang Kami</a></li><li><a href="../visi-misi/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-bullseye w-4 text-brand-500"></i>Visi dan Misi</a></li><li><a href="../nilai/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-hand-holding-heart w-4 text-brand-500"></i>Nilai-Nilai</a></li><li><a href="../struktur/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-sitemap w-4 text-brand-500"></i>Struktur Organisasi</a></li>
+            </ul>
+          </div>
+        </li><li><a href="../program/" class="py-2 text-sm transition text-white/70 hover:text-white" >Program</a></li><li><a href="../galeri/" class="py-2 text-sm transition font-medium text-white" aria-current="page">Galeri</a></li><li><a href="../kontak/" class="py-2 text-sm transition text-white/70 hover:text-white" >Kontak</a></li></ul>
+    <div class="hidden lg:block"><a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi Kami<i class="fa-solid fa-paper-plane text-xs transition group-hover:translate-x-0.5"></i></a></div>
+    <button type="button" @click="open = !open" :aria-expanded="open" aria-label="Buka menu" class="grid h-11 w-11 place-items-center text-xl text-white lg:hidden">
+      <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
+    </button>
+  </nav>
+  <div x-cloak x-show="open" x-transition class="border-t border-white/10 lg:hidden">
+    <ul class="mx-auto max-w-7xl space-y-1 px-4 py-4 text-sm sm:px-6"><li><a href="../" class="block px-3 py-2.5 text-white/75">Beranda</a></li><li class="pt-3"><p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">Profil</p>
+        <a href="../tentang/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-circle-info w-4 text-brand-400"></i>Tentang Kami</a><a href="../visi-misi/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-bullseye w-4 text-brand-400"></i>Visi dan Misi</a><a href="../nilai/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-hand-holding-heart w-4 text-brand-400"></i>Nilai-Nilai</a><a href="../struktur/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-sitemap w-4 text-brand-400"></i>Struktur Organisasi</a></li><li><a href="../program/" class="block px-3 py-2.5 text-white/75">Program</a></li><li><a href="../galeri/" class="block px-3 py-2.5 bg-white/10 text-white">Galeri</a></li><li><a href="../kontak/" class="block px-3 py-2.5 text-white/75">Kontak</a></li>
+      <li class="pt-4"><a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi Kami<i class="fa-solid fa-paper-plane text-xs transition group-hover:translate-x-0.5"></i></a></li>
+    </ul>
+  </div>
+</header>
+<main x-data="gallery" @keydown.escape.window="open = false" @keydown.arrow-right.window="open && next()" @keydown.arrow-left.window="open && prev()">
+<script type="application/json" id="gallery-data">[{"src":"../assets/images/foto-06-menanam-di-kebun.jpg","alt":"Dua orang menanam di bedengan kebun","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-07-mengolah-lahan.jpg","alt":"Para perempuan mengolah lahan kebun","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-09-mencangkul-lahan.jpg","alt":"Seorang perempuan mencangkul lahan","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-08-berkumpul-di-pondok.jpg","alt":"Warga berkumpul di pondok beratap daun","cat":"komunitas","label":"Komunitas"},{"src":"../assets/images/foto-10-diskusi-dalam-ruangan.jpg","alt":"Para perempuan duduk berdiskusi di dalam ruangan","cat":"pertemuan","label":"Pertemuan"},{"src":"../assets/images/foto-11-anggota-di-hutan.jpg","alt":"Seorang perempuan duduk di antara pepohonan","cat":"komunitas","label":"Komunitas"},{"src":"../assets/images/foto-03-kolase-kegiatan.jpg","alt":"Kolase foto kegiatan komunitas","cat":"komunitas","label":"Komunitas"},{"src":"../assets/images/foto-02-anggota-di-kebun-bambu.jpg","alt":"Para perempuan berdiri di depan rumpun bambu dan pagar kebun","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-04-pertemuan-anggota-1.jpg","alt":"Para perempuan duduk bersama dalam pertemuan di dalam ruangan","cat":"pertemuan","label":"Pertemuan"},{"src":"../assets/images/foto-05-pertemuan-anggota-2.jpg","alt":"Para perempuan mengikuti pertemuan di dalam ruangan","cat":"pertemuan","label":"Pertemuan"},{"src":"../assets/images/foto-12-kerja-kebun-1.jpg","alt":"Para perempuan menggarap lahan kebun","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-13-kerja-kebun-2.jpg","alt":"Para perempuan bekerja di lahan kebun","cat":"kebun","label":"Kebun"},{"src":"../assets/images/foto-14-anggota-di-kebun-bambu-besar.jpg","alt":"Para perempuan berdiri di depan rumpun bambu dan pagar kebun","cat":"kebun","label":"Kebun"}]</script>
+
+<section class="hero-bg relative overflow-hidden pb-40 pt-36 text-white lg:pb-48 lg:pt-44">
+  
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav aria-label="Breadcrumb" class="text-xs text-white/60">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="../" class="hover:text-white"><i class="fa-solid fa-house mr-1"></i>Beranda</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[9px]"></i></li><li aria-current="page" class="text-white">Galeri</li>
+      </ol>
+    </nav>
+    <div class="mt-8 max-w-3xl">
+      <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400"><span class="h-px w-8 bg-brand-400"></span>Galeri kegiatan</p>
+      <h1 class="mt-5 text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">Galeri kegiatan</h1>
+      <p class="mt-6 max-w-2xl text-base leading-8 text-white/70">Potret kegiatan para anggota KELOMANG: bekerja di kebun, berkumpul, dan berdiskusi bersama.</p>
+    </div>
+  </div>
+</section>
+
+<section id="konten" class="relative">
+  <div class="mx-auto -mt-24 max-w-7xl px-4 sm:px-6 lg:-mt-28 lg:pl-24 lg:pr-0">
+    <div class="relative bg-white px-6 pb-8 pt-12 sm:px-10 lg:px-16 lg:pt-16">
+  <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <div><p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-600"><span class="h-px w-8 bg-brand-500"></span>Dokumentasi</p><h2 class="mt-4 text-3xl font-bold text-ink-950 sm:text-4xl">Foto kegiatan komunitas</h2></div>
+    <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filter foto">
+      <button type="button" role="tab" @click="filter = 'semua'" :aria-selected="filter === 'semua'" :class="filter === 'semua' ? 'bg-ink-900 text-white' : 'bg-ink-50 text-ink-700 hover:bg-ink-100'" class="px-4 py-2 text-sm transition">Semua</button><button type="button" role="tab" @click="filter = 'kebun'" :aria-selected="filter === 'kebun'" :class="filter === 'kebun' ? 'bg-ink-900 text-white' : 'bg-ink-50 text-ink-700 hover:bg-ink-100'" class="px-4 py-2 text-sm transition">Kebun</button><button type="button" role="tab" @click="filter = 'pertemuan'" :aria-selected="filter === 'pertemuan'" :class="filter === 'pertemuan' ? 'bg-ink-900 text-white' : 'bg-ink-50 text-ink-700 hover:bg-ink-100'" class="px-4 py-2 text-sm transition">Pertemuan</button><button type="button" role="tab" @click="filter = 'komunitas'" :aria-selected="filter === 'komunitas'" :class="filter === 'komunitas' ? 'bg-ink-900 text-white' : 'bg-ink-50 text-ink-700 hover:bg-ink-100'" class="px-4 py-2 text-sm transition">Komunitas</button>
+    </div>
+  </div>
+  <div class="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3">
+    <template x-for="(item, i) in filtered" :key="item.src">
+      <button type="button" @click="show(i)" class="group relative mb-5 block w-full overflow-hidden break-inside-avoid bg-ink-50 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+        <img :src="item.src" :alt="item.alt" loading="lazy" class="w-full transition duration-500 group-hover:scale-105">
+        <span class="absolute inset-0 flex items-end bg-gradient-to-t from-ink-950/80 via-ink-950/0 to-transparent p-5 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+          <span>
+            <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-400" x-text="item.label"></span>
+            <span class="mt-1 block text-sm text-white" x-text="item.alt"></span>
+          </span>
+          <i class="fa-solid fa-up-right-and-down-left-from-center absolute right-5 top-5 text-white"></i>
+        </span>
+      </button>
+    </template>
+  </div>
+</div>
+  </div>
+</section>
+
+<div x-cloak x-show="open" x-transition.opacity class="fixed inset-0 z-[60] flex items-center justify-center bg-ink-950/95 p-4" role="dialog" aria-modal="true" aria-label="Pratinjau foto" @click.self="open = false">
+  <button type="button" @click="open = false" class="absolute right-4 top-4 grid h-12 w-12 place-items-center text-2xl text-white/80 hover:text-white" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+  <button type="button" @click="prev()" class="absolute left-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center bg-white/10 text-white hover:bg-brand-500 sm:left-6" aria-label="Foto sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+  <figure class="max-w-5xl">
+    <img :src="current.src" :alt="current.alt" class="mx-auto max-h-[78vh] w-auto bg-white p-2">
+    <figcaption class="mt-4 flex items-center justify-between gap-4 text-sm text-white/80">
+      <span x-text="current.alt"></span>
+      <span class="shrink-0 text-white/50" x-text="(index + 1) + ' / ' + filtered.length"></span>
+    </figcaption>
+  </figure>
+  <button type="button" @click="next()" class="absolute right-2 top-1/2 grid h-12 w-12 -translate-y-1/2 place-items-center bg-white/10 text-white hover:bg-brand-500 sm:right-6" aria-label="Foto berikutnya"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<div class="h-20 lg:h-28"></div>
+<section class="pb-20 lg:pb-28"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="hero-bg relative overflow-hidden px-6 py-14 text-white sm:px-12 lg:px-16">
+      
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+      <div class="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400"><span class="h-px w-8 bg-brand-400"></span>Mari terhubung</p>
+          <h2 class="mt-4 text-3xl font-bold leading-tight sm:text-4xl">Ingin belajar dan bergerak bersama KELOMANG?</h2>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-white/70">KELOMANG ingin menjadi tempat pembelajaran bagi semua pihak demi mendukung inisiatif dan kedaulatan rakyat kecil.</p>
+        </div>
+        <div class="flex flex-wrap gap-4 lg:justify-end">
+          <a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi kami<i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-0.5"></i></a>
+          <a href="../program/" class="inline-flex items-center gap-2 border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:border-white hover:bg-white/10">Lihat program</a>
+        </div>
+      </div>
+    </div></div></section>
+</main>
+<footer class="hero-bg relative overflow-hidden text-white">
+  
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+      <div>
+        <a href="../" class="flex items-center gap-3">
+          <img src="../assets/images/logo-kelomang.jpg" alt="Logo Komunitas Perempuan Kelomang" class="h-14 w-auto rounded-md bg-white p-0.5" loading="lazy">
+          <span class="leading-tight">
+            <span class="block font-display text-xl font-bold tracking-[0.18em]">KELOMANG</span>
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-white/60">Komunitas Perempuan</span>
+          </span>
+        </a>
+        <p class="mt-6 max-w-xs text-sm leading-7 text-white/60">Lembaga nonpemerintah berbentuk komunitas perempuan di Kabupaten Fakfak, Papua Barat. Berdiri sejak 25 Agustus 2009.</p>
+      </div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Profil</h3><ul class="mt-5 space-y-3 text-sm"><li><a href="../tentang/" class="text-white/60 transition hover:text-brand-400">Tentang Kami</a></li><li><a href="../visi-misi/" class="text-white/60 transition hover:text-brand-400">Visi dan Misi</a></li><li><a href="../nilai/" class="text-white/60 transition hover:text-brand-400">Nilai-Nilai</a></li><li><a href="../struktur/" class="text-white/60 transition hover:text-brand-400">Struktur Organisasi</a></li></ul></div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Jelajahi</h3><ul class="mt-5 space-y-3 text-sm"><li><a href="../" class="text-white/60 transition hover:text-brand-400">Beranda</a></li><li><a href="../program/" class="text-white/60 transition hover:text-brand-400">Program</a></li><li><a href="../galeri/" class="text-white/60 transition hover:text-brand-400">Galeri</a></li><li><a href="../kontak/" class="text-white/60 transition hover:text-brand-400">Kontak</a></li></ul></div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Sekretariat</h3><ul class="mt-5 space-y-3 text-sm">
+        <li class="flex gap-3 text-white/60"><i class="fa-solid fa-location-dot mt-1 text-brand-400"></i><span>Kampung Brongkendik, Distrik Fakfak Tengah, Kabupaten Fakfak, Papua Barat</span></li>
+        <li class="flex gap-3"><i class="fa-solid fa-phone mt-1 text-brand-400"></i><a href="tel:+6282198475005" class="text-white/60 hover:text-brand-400">+62 821-9847-5005</a></li>
+        <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand-400"></i><a href="mailto:komunitasperempuankelomang@gmail.com" class="break-all text-white/60 hover:text-brand-400">komunitasperempuankelomang@gmail.com</a></li></ul></div>
+    </div>
+    <div class="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center text-xs text-white/50">
+      <p>&copy; 2026 Komunitas Perempuan Kelomang. Hak cipta dilindungi.</p>
+      <a href="https://nokensoft.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+        <span>Powered by</span>
+        <img src="../assets/images/logo-nokensoft.png" alt="Logo Nokensoft" class="h-5 w-auto" loading="lazy">
+        <span class="font-semibold text-white/80">Nokensoft.com</span>
+      </a>
+    </div>
+  </div>
+</footer>
+<div x-data="backToTop">
+  <button type="button" x-cloak x-show="show" x-transition @click="up()" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-brand-500 text-white shadow-lg transition hover:bg-brand-600">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</div>
+</body>
+</html>

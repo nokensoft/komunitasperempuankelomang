@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visi dan Misi | Komunitas Perempuan Kelomang</title>
+  <meta name="description" content="Visi dan empat butir misi Komunitas Perempuan Kelomang untuk perempuan dan masyarakat adat Papua.">
+  <meta name="theme-color" content="#1f0f33">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Visi dan Misi | Komunitas Perempuan Kelomang">
+  <meta property="og:description" content="Visi dan empat butir misi Komunitas Perempuan Kelomang untuk perempuan dan masyarakat adat Papua.">
+  <meta property="og:image" content="../assets/images/foto-14-anggota-di-kebun-bambu-besar.jpg">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo-kelomang.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script src="../assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+<body class="bg-white text-ink-900 antialiased">
+<a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2">Lewati ke konten</a>
+<header x-data="siteHeader" class="fixed inset-x-0 top-0 z-50 transition duration-300" :class="(scrolled || open) ? 'bg-ink-950/95 shadow-lg backdrop-blur' : 'bg-transparent'">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navigasi utama">
+    <a href="../" class="flex items-center gap-3">
+      <img src="../assets/images/logo-kelomang.jpg" alt="Logo Komunitas Perempuan Kelomang" class="h-11 w-auto rounded-md bg-white p-0.5">
+      <span class="leading-tight">
+        <span class="block font-display text-lg font-bold tracking-[0.18em] text-white">KELOMANG</span>
+        <span class="block text-[10px] uppercase tracking-[0.2em] text-white/60">Komunitas Perempuan</span>
+      </span>
+    </a>
+    <ul class="hidden items-center gap-9 lg:flex"><li><a href="../" class="py-2 text-sm transition text-white/70 hover:text-white" >Beranda</a></li>
+        <li class="relative" @mouseenter="profil = true" @mouseleave="profil = false">
+          <button type="button" @click="profil = !profil" :aria-expanded="profil" class="flex items-center gap-1.5 py-2 text-sm transition font-medium text-white">
+            Profil<i class="fa-solid fa-chevron-down text-[10px] transition" :class="profil && 'rotate-180'"></i>
+          </button>
+          <div x-cloak x-show="profil" x-transition.origin.top @click.outside="profil = false" class="absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3">
+            <ul class="bg-white p-2 shadow-soft">
+              <li><a href="../tentang/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-circle-info w-4 text-brand-500"></i>Tentang Kami</a></li><li><a href="../visi-misi/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition bg-brand-50 text-brand-600"><i class="fa-solid fa-bullseye w-4 text-brand-500"></i>Visi dan Misi</a></li><li><a href="../nilai/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-hand-holding-heart w-4 text-brand-500"></i>Nilai-Nilai</a></li><li><a href="../struktur/" class="flex items-center gap-3 px-3 py-2.5 text-sm transition text-ink-700 hover:bg-ink-50"><i class="fa-solid fa-sitemap w-4 text-brand-500"></i>Struktur Organisasi</a></li>
+            </ul>
+          </div>
+        </li><li><a href="../program/" class="py-2 text-sm transition text-white/70 hover:text-white" >Program</a></li><li><a href="../galeri/" class="py-2 text-sm transition text-white/70 hover:text-white" >Galeri</a></li><li><a href="../kontak/" class="py-2 text-sm transition text-white/70 hover:text-white" >Kontak</a></li></ul>
+    <div class="hidden lg:block"><a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi Kami<i class="fa-solid fa-paper-plane text-xs transition group-hover:translate-x-0.5"></i></a></div>
+    <button type="button" @click="open = !open" :aria-expanded="open" aria-label="Buka menu" class="grid h-11 w-11 place-items-center text-xl text-white lg:hidden">
+      <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'"></i>
+    </button>
+  </nav>
+  <div x-cloak x-show="open" x-transition class="border-t border-white/10 lg:hidden">
+    <ul class="mx-auto max-w-7xl space-y-1 px-4 py-4 text-sm sm:px-6"><li><a href="../" class="block px-3 py-2.5 text-white/75">Beranda</a></li><li class="pt-3"><p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/40">Profil</p>
+        <a href="../tentang/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-circle-info w-4 text-brand-400"></i>Tentang Kami</a><a href="../visi-misi/" class="flex items-center gap-3 px-3 py-2.5 bg-white/10 text-white"><i class="fa-solid fa-bullseye w-4 text-brand-400"></i>Visi dan Misi</a><a href="../nilai/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-hand-holding-heart w-4 text-brand-400"></i>Nilai-Nilai</a><a href="../struktur/" class="flex items-center gap-3 px-3 py-2.5 text-white/75"><i class="fa-solid fa-sitemap w-4 text-brand-400"></i>Struktur Organisasi</a></li><li><a href="../program/" class="block px-3 py-2.5 text-white/75">Program</a></li><li><a href="../galeri/" class="block px-3 py-2.5 text-white/75">Galeri</a></li><li><a href="../kontak/" class="block px-3 py-2.5 text-white/75">Kontak</a></li>
+      <li class="pt-4"><a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi Kami<i class="fa-solid fa-paper-plane text-xs transition group-hover:translate-x-0.5"></i></a></li>
+    </ul>
+  </div>
+</header>
+<main>
+
+<section class="hero-bg relative overflow-hidden pb-40 pt-36 text-white lg:pb-48 lg:pt-44">
+  
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav aria-label="Breadcrumb" class="text-xs text-white/60">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href="../" class="hover:text-white"><i class="fa-solid fa-house mr-1"></i>Beranda</a></li>
+        <li><i class="fa-solid fa-chevron-right text-[9px]"></i></li><li >Profil</li><li><i class="fa-solid fa-chevron-right text-[9px]"></i></li><li aria-current="page" class="text-white">Visi dan Misi</li>
+      </ol>
+    </nav>
+    <div class="mt-8 max-w-3xl">
+      <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400"><span class="h-px w-8 bg-brand-400"></span>Visi dan misi</p>
+      <h1 class="mt-5 text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">Arah yang dituju, langkah yang ditempuh</h1>
+      <p class="mt-6 max-w-2xl text-base leading-8 text-white/70">Visi dan misi KELOMANG untuk mewujudkan masyarakat adat Papua, khususnya perempuan, yang mandiri, setara, dan bebas dari ketidakadilan.</p>
+    </div>
+  </div>
+</section>
+
+<section id="konten" class="relative">
+  <div class="mx-auto -mt-24 max-w-7xl px-4 sm:px-6 lg:-mt-28 lg:pl-24 lg:pr-0">
+    <div class="relative bg-white px-6 pb-8 pt-12 sm:px-10 lg:px-16 lg:pt-16">
+  <div class="grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+    <div>
+      <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-600"><span class="h-px w-8 bg-brand-500"></span>Visi</p>
+      <h2 class="mt-4 text-3xl font-bold text-ink-950 sm:text-4xl">Arah yang dituju</h2>
+      <div class="relative mt-8 border-l-4 border-brand-500 bg-ink-50/50 p-7 sm:p-9">
+        <i class="fa-solid fa-quote-left absolute right-6 top-6 text-4xl text-ink-100"></i>
+        <p class="relative text-[15px] leading-8 text-ink-700">Terwujudnya masyarakat adat (khususnya perempuan) yang mampu mengelola sumber daya alamnya sendiri secara mandiri tanpa membedakan latar belakang ekonomi, sosial, politik, agama, ras, etnis, dan jenis kelamin; hidup secara harmonis; serta bebas dari segala bentuk diskriminasi, kekerasan, dan ketidakadilan, melalui upaya mendorong kesetaraan gender dan pemberdayaan perempuan, penegakan hukum, reformasi sistem sosial, dan revitalisasi nilai-nilai budaya serta praktik-praktik diskriminasi terhadap perempuan Papua.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="col-span-2"><div class="bg-white p-2 shadow-soft"><div class="aspect-[4/3] overflow-hidden"><img src="../assets/images/foto-04-pertemuan-anggota-1.jpg" alt="Para perempuan duduk bersama dalam pertemuan di dalam ruangan" class="h-full w-full object-cover" loading="lazy" ></div></div></div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="pt-16 pb-20 lg:pb-28"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  
+  <div class="grid gap-6 lg:grid-cols-2 lg:items-end">
+    <div><p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-600"><span class="h-px w-8 bg-brand-500"></span>Misi</p><h2 class="mt-4 text-3xl font-bold leading-tight text-ink-950 sm:text-4xl">Langkah yang ditempuh</h2></div>
+    <p class="text-sm leading-7 text-ink-500 lg:pl-12">Empat butir misi yang menjadi pegangan KELOMANG dalam bekerja bersama perempuan dan masyarakat adat Papua.</p>
+  </div>
+  <div class="mt-14 grid gap-6 md:grid-cols-2">
+    
+    <article class="reveal group flex gap-6 bg-ink-50/40 p-7 transition hover:bg-white hover:shadow-soft sm:p-9">
+      <div class="shrink-0">
+        <span class="grid h-14 w-14 place-items-center bg-brand-500 font-display text-xl font-bold text-white">1</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-scale-balanced text-xl text-brand-500"></i>
+        <p class="mt-3 text-[15px] leading-8 text-ink-700">Melakukan pendidikan publik untuk mewujudkan kesetaraan gender, demokrasi, penegakan hukum, dan HAM.</p>
+      </div>
+    </article>
+    <article class="reveal group flex gap-6 bg-ink-50/40 p-7 transition hover:bg-white hover:shadow-soft sm:p-9">
+      <div class="shrink-0">
+        <span class="grid h-14 w-14 place-items-center bg-brand-500 font-display text-xl font-bold text-white">2</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-lightbulb text-xl text-brand-500"></i>
+        <p class="mt-3 text-[15px] leading-8 text-ink-700">Melakukan mobilisasi kesadaran kritis untuk mendorong inisiatif masyarakat agar dapat berpartisipasi dalam mewujudkan keadilan dan kesejahteraan bagi perempuan Papua.</p>
+      </div>
+    </article>
+    <article class="reveal group flex gap-6 bg-ink-50/40 p-7 transition hover:bg-white hover:shadow-soft sm:p-9">
+      <div class="shrink-0">
+        <span class="grid h-14 w-14 place-items-center bg-brand-500 font-display text-xl font-bold text-white">3</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-leaf text-xl text-brand-500"></i>
+        <p class="mt-3 text-[15px] leading-8 text-ink-700">Membangun ekonomi rakyat melalui usaha pengelolaan sumber daya alam, pelestarian lingkungan hidup, serta pengembangan budaya untuk mewujudkan kesejahteraan perempuan Papua.</p>
+      </div>
+    </article>
+    <article class="reveal group flex gap-6 bg-ink-50/40 p-7 transition hover:bg-white hover:shadow-soft sm:p-9">
+      <div class="shrink-0">
+        <span class="grid h-14 w-14 place-items-center bg-brand-500 font-display text-xl font-bold text-white">4</span>
+      </div>
+      <div>
+        <i class="fa-solid fa-landmark text-xl text-brand-500"></i>
+        <p class="mt-3 text-[15px] leading-8 text-ink-700">Mendorong kebijakan publik yang berpihak pada dan melindungi hak-hak perempuan Papua serta kelompok-kelompok masyarakat adat Papua.</p>
+      </div>
+    </article>
+  </div></div></section>
+
+<section class="pb-20 lg:pb-28"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="reveal"><div class="bg-white p-2 shadow-soft"><div class="aspect-[16/9] lg:aspect-[21/9] overflow-hidden"><img src="../assets/images/foto-05-pertemuan-anggota-2.jpg" alt="Para perempuan mengikuti pertemuan di dalam ruangan" class="h-full w-full object-cover" loading="lazy" ></div></div></div></div></section>
+
+<section class="pb-20 lg:pb-28"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="hero-bg relative overflow-hidden px-6 py-14 text-white sm:px-12 lg:px-16">
+      
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+      <div class="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-400"><span class="h-px w-8 bg-brand-400"></span>Mari terhubung</p>
+          <h2 class="mt-4 text-3xl font-bold leading-tight sm:text-4xl">Ingin belajar dan bergerak bersama KELOMANG?</h2>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-white/70">KELOMANG ingin menjadi tempat pembelajaran bagi semua pihak demi mendukung inisiatif dan kedaulatan rakyat kecil.</p>
+        </div>
+        <div class="flex flex-wrap gap-4 lg:justify-end">
+          <a href="../kontak/" class="group inline-flex items-center gap-2 bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2">Hubungi kami<i class="fa-solid fa-arrow-right text-xs transition group-hover:translate-x-0.5"></i></a>
+          <a href="../program/" class="inline-flex items-center gap-2 border border-white/40 px-6 py-3 text-sm font-medium text-white transition hover:border-white hover:bg-white/10">Lihat program</a>
+        </div>
+      </div>
+    </div></div></section>
+</main>
+<footer class="hero-bg relative overflow-hidden text-white">
+  
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -right-48 -top-56 h-[760px] w-[760px] rounded-full border border-white/10"></div>
+    <div class="absolute right-24 top-24 h-[520px] w-[520px] rounded-full border border-white/[0.06]"></div>
+    <div class="absolute -left-40 -bottom-72 h-[560px] w-[560px] rounded-full border border-white/[0.06]"></div>
+    <div class="text-white/40">
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[6%] top-[58%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[38%] top-[30%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[30%] top-[18%] h-5 w-5" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute left-[24%] bottom-[14%] h-4 w-4" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+      <svg viewBox="0 0 24 24" class="sparkle absolute right-[6%] bottom-[30%] h-3 w-3" fill="currentColor"><path d="M12 0c.6 6.6 5.4 11.4 12 12-6.6.6-11.4 5.4-12 12-.6-6.6-5.4-11.4-12-12C6.6 11.4 11.4 6.6 12 0z"/></svg>
+    </div>
+    <span class="absolute left-[16%] top-[22%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[46%] top-[62%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute right-[40%] top-[12%] h-1.5 w-1.5 rounded-full bg-white/30"></span>
+    <span class="absolute left-[8%] bottom-[10%] h-1.5 w-1.5 rounded-full bg-white/20"></span>
+  </div>
+  <div class="relative mx-auto max-w-7xl px-4 pb-10 pt-20 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+      <div>
+        <a href="../" class="flex items-center gap-3">
+          <img src="../assets/images/logo-kelomang.jpg" alt="Logo Komunitas Perempuan Kelomang" class="h-14 w-auto rounded-md bg-white p-0.5" loading="lazy">
+          <span class="leading-tight">
+            <span class="block font-display text-xl font-bold tracking-[0.18em]">KELOMANG</span>
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-white/60">Komunitas Perempuan</span>
+          </span>
+        </a>
+        <p class="mt-6 max-w-xs text-sm leading-7 text-white/60">Lembaga nonpemerintah berbentuk komunitas perempuan di Kabupaten Fakfak, Papua Barat. Berdiri sejak 25 Agustus 2009.</p>
+      </div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Profil</h3><ul class="mt-5 space-y-3 text-sm"><li><a href="../tentang/" class="text-white/60 transition hover:text-brand-400">Tentang Kami</a></li><li><a href="../visi-misi/" class="text-white/60 transition hover:text-brand-400">Visi dan Misi</a></li><li><a href="../nilai/" class="text-white/60 transition hover:text-brand-400">Nilai-Nilai</a></li><li><a href="../struktur/" class="text-white/60 transition hover:text-brand-400">Struktur Organisasi</a></li></ul></div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Jelajahi</h3><ul class="mt-5 space-y-3 text-sm"><li><a href="../" class="text-white/60 transition hover:text-brand-400">Beranda</a></li><li><a href="../program/" class="text-white/60 transition hover:text-brand-400">Program</a></li><li><a href="../galeri/" class="text-white/60 transition hover:text-brand-400">Galeri</a></li><li><a href="../kontak/" class="text-white/60 transition hover:text-brand-400">Kontak</a></li></ul></div>
+      <div><h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-white">Sekretariat</h3><ul class="mt-5 space-y-3 text-sm">
+        <li class="flex gap-3 text-white/60"><i class="fa-solid fa-location-dot mt-1 text-brand-400"></i><span>Kampung Brongkendik, Distrik Fakfak Tengah, Kabupaten Fakfak, Papua Barat</span></li>
+        <li class="flex gap-3"><i class="fa-solid fa-phone mt-1 text-brand-400"></i><a href="tel:+6282198475005" class="text-white/60 hover:text-brand-400">+62 821-9847-5005</a></li>
+        <li class="flex gap-3"><i class="fa-solid fa-envelope mt-1 text-brand-400"></i><a href="mailto:komunitasperempuankelomang@gmail.com" class="break-all text-white/60 hover:text-brand-400">komunitasperempuankelomang@gmail.com</a></li></ul></div>
+    </div>
+    <div class="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-center text-xs text-white/50">
+      <p>&copy; 2026 Komunitas Perempuan Kelomang. Hak cipta dilindungi.</p>
+      <a href="https://nokensoft.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white/50 transition hover:text-white">
+        <span>Powered by</span>
+        <img src="../assets/images/logo-nokensoft.png" alt="Logo Nokensoft" class="h-5 w-auto" loading="lazy">
+        <span class="font-semibold text-white/80">Nokensoft.com</span>
+      </a>
+    </div>
+  </div>
+</footer>
+<div x-data="backToTop">
+  <button type="button" x-cloak x-show="show" x-transition @click="up()" aria-label="Kembali ke atas" class="fixed bottom-6 right-6 z-40 grid h-12 w-12 place-items-center rounded-full bg-brand-500 text-white shadow-lg transition hover:bg-brand-600">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+</div>
+</body>
+</html>
